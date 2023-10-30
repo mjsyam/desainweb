@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>React Samples</title>
+  </head>
+  <body>
+    <!-- Target container -->
+    <div id="root"></div>
+    <!-- React library & ReactDOM (Development Version)-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script>
+      //Bagian I
+      // const menu1 = React.createElement("h1", null, "Masak Rendang");
+      // const menu2 = React.createElement("h1", null, "Masak Opor Ayam");
+      // ReactDOM.render([menu1, menu2], document.getElementById("root"));
+
+      //Bagian II
+      // const bahan = React.createElement(
+      //   "ul",
+      //   null,
+      //   React.createElement("li", null, "1 kg daging sapi bagian paha"),
+      //   React.createElement("li", null, "2500 ml santan"),
+      //   React.createElement("li", null, "3 batang serai digeprek"),
+      //   React.createElement("li", null, "8 lembar daun jeruk")
+      // );
+      // console.log(bahan);
+
+      //Bagian III
+      // const menu1 = React.createElement(
+      //   "section",
+      //   { id: "baked-salmon" },
+      //   React.createElement("h1", null, "Baked Salmon"),
+      //   React.createElement(
+      //     "ul",
+      //     { className: "ingredients" },
+      //     React.createElement("li", null, "2 lb salmon"),
+      //     React.createElement("li", null, "5 sprigs fresh rosemary"),
+      //     React.createElement("li", null, "2 tablespoons olive oil"),
+      //     React.createElement("li", null, "2 small lemons"),
+      //     React.createElement("li", null, "1 teaspoon kosher salt"),
+      //     React.createElement("li", null, "4 cloves of chopped garlic")
+      //   ),
+      //   React.createElement(
+      //     "section",
+      //     { className: "instructions" },
+      //     React.createElement("h2", null, "Cooking Instructions"),
+      //     React.createElement("p", null, "Preheat the oven to 375 degrees."),
+      //     React.createElement(
+      //       "p",
+      //       null,
+      //       "Lightly coat aluminum foil with oil."
+      //     ),
+      //     React.createElement("p", null, "Place salmon on foil."),
+      //     React.createElement(
+      //       "p",
+      //       null,
+      //       "Cover with rosemary, sliced lemons, chopped garlic."
+      //     ),
+      //     React.createElement(
+      //       "p",
+      //       null,
+      //       "Bake for 15-20 minutes until cooked through."
+      //     ),
+      //     React.createElement("p", null, "Remove from oven.")
+      //   )
+      // );
+
+      // ReactDOM.render(menu1, document.getElementById("root"));
+
+      const items = [
+        "2 lb salmon",
+        "5 sprigs fresh rosemary",
+        "2 tablespoons olive oil",
+        "2 small lemons",
+        "1 teaspoon kosher salt",
+        "4 cloves of chopped garlic",
+      ];
+
+      const menu1 = React.createElement(
+        "ul",
+        { className: "ingredients" },
+        items.map((ingredient, i) =>
+          React.createElement("li", { key: i }, ingredient)
+        )
+      );
+
+      ReactDOM.render(menu1, document.getElementById("root"));
+    </script>
+  </body>
+</html>
