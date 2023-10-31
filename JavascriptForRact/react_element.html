@@ -6,7 +6,9 @@
   </head>
   <body>
     <!-- Target container -->
+
     <div id="root"></div>
+    
     <!-- React library & ReactDOM (Development Version)-->
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -26,67 +28,137 @@
       //   React.createElement("li", null, "8 lembar daun jeruk")
       // );
       // console.log(bahan);
+      // ReactDOM.render([menu1, bahan], document.getElementById("root"));
+
 
       //Bagian III
       // const menu1 = React.createElement(
       //   "section",
-      //   { id: "baked-salmon" },
-      //   React.createElement("h1", null, "Baked Salmon"),
+      //   { id: "masak-rendang" },
+      //   React.createElement("h1", null, "Masak Rendang"),
       //   React.createElement(
       //     "ul",
-      //     { className: "ingredients" },
-      //     React.createElement("li", null, "2 lb salmon"),
-      //     React.createElement("li", null, "5 sprigs fresh rosemary"),
-      //     React.createElement("li", null, "2 tablespoons olive oil"),
-      //     React.createElement("li", null, "2 small lemons"),
-      //     React.createElement("li", null, "1 teaspoon kosher salt"),
-      //     React.createElement("li", null, "4 cloves of chopped garlic")
+      //     { className: "bahan" },
+      //     React.createElement("li", null, "1 kg daging sapi bagian paha"),
+      //     React.createElement("li", null, "2500 ml santan"),
+      //     React.createElement("li", null, "3 batang serai digeprek"),
+      //     React.createElement("li", null, "8 lembar daun jeruk"),
+      //     React.createElement("li", null, "4 Sereh")
       //   ),
       //   React.createElement(
       //     "section",
       //     { className: "instructions" },
-      //     React.createElement("h2", null, "Cooking Instructions"),
-      //     React.createElement("p", null, "Preheat the oven to 375 degrees."),
+      //     React.createElement("h2", null, "Cara membuat"),
+      //     React.createElement("p", null, "Potong-potong daging kira-kira 1 kg jadi 20 potong."),
       //     React.createElement(
       //       "p",
       //       null,
-      //       "Lightly coat aluminum foil with oil."
+      //       "Masukkan santan ke dalam wajan, tambahkan serai, daun jeruk, daun salam dan bumbu halus"
       //     ),
-      //     React.createElement("p", null, "Place salmon on foil."),
+      //     React.createElement("p", null, "Masukkan daging, aduk-aduk hingga mendidih, kecilkan api."),
       //     React.createElement(
       //       "p",
       //       null,
-      //       "Cover with rosemary, sliced lemons, chopped garlic."
-      //     ),
-      //     React.createElement(
-      //       "p",
-      //       null,
-      //       "Bake for 15-20 minutes until cooked through."
-      //     ),
-      //     React.createElement("p", null, "Remove from oven.")
+      //       "Teruskan memasak dengan api kecil sampai rendang mengering dan berminyak"
+      //     )
       //   )
       // );
 
       // ReactDOM.render(menu1, document.getElementById("root"));
 
-      const items = [
-        "2 lb salmon",
-        "5 sprigs fresh rosemary",
-        "2 tablespoons olive oil",
-        "2 small lemons",
-        "1 teaspoon kosher salt",
-        "4 cloves of chopped garlic",
+      // const items = [
+      //   "2 lb salmon",
+      //   "5 sprigs fresh rosemary",
+      //   "2 tablespoons olive oil",
+      //   "2 small lemons",
+      //   "1 teaspoon kosher salt",
+      //   "4 cloves of chopped garlic",
+      // ];
+
+      const resep = ["Masak Rendang", 
+                     "Masak Opor Ayam",
+                     "Masa Nasi Goreng"]
+
+      const bahan = [
+        "1 kg daging sapi bagian paha",
+        "2500 ml santan",
+        "3 batang serai digeprek",
+        "8 lembar daun jeruk",
+        "4 Sereh",
       ];
 
+      const cara = [
+        "Potong-potong daging kira-kira 1 kg jadi 20 potong.",
+        "Masukkan santan ke dalam wajan, tambahkan serai, daun jeruk, daun salam dan bumbu halus.",
+        "Masukkan daging, aduk-aduk hingga mendidih, kecilkan api.",
+        "Teruskan memasak dengan api kecil sampai rendang mengering dan berminyak",
+      ];
+
+      //Bagian III
       const menu1 = React.createElement(
-        "ul",
-        { className: "ingredients" },
-        items.map((ingredient, i) =>
-          React.createElement("li", { key: i }, ingredient)
+        "section",
+        { id: "masak-rendang" },
+        React.createElement("h1", null, "Masak Rendang"), //data ini di masukan dari data resep
+        React.createElement(
+          "ul",
+          { className: "bahan" },
+          bahan.map((bahan_bahan, i) =>
+            React.createElement("li", { key: i }, bahan_bahan)
+          )
+        ),
+        React.createElement(
+          "section",
+          { className: "instructions" },
+          React.createElement("h2", null, "Cara membuat"),
+          cara.map((cara_cara, i) =>
+            React.createElement("li", { key: i }, cara_cara)
+          )
         )
       );
 
-      ReactDOM.render(menu1, document.getElementById("root"));
+      // function resep_makanan({bahan, cara}) {
+      //   return React.createElement(
+      //     "section",
+      //     { id: "masak-rendang" },
+      //     React.createElement("h1", null, "Masak Rendang"),
+      //     React.createElement(
+      //       "ul",
+      //       { className: "bahan" },
+      //       bahan.map((bahan_bahan, i) =>
+      //         React.createElement("li", { key: i }, bahan_bahan)
+      //       )
+      //     ),
+      //     React.createElement(
+      //       "section",
+      //       { className: "instructions" },
+      //       React.createElement("h2", null, "Cara membuat"),
+      //       React.createElement(
+      //         "ul",
+      //         { className: "bahan" },
+      //         cara.map((bahan_bahan, i) =>
+      //           React.createElement("li", { key: i }, bahan_bahan)
+      //         )
+      //       )
+      //     )
+      //   );
+      // }
+
+      // ReactDOM.render(menu1, document.getElementById("root"));
+
+      // ReactDOM.render(
+      //   React.createElement(resep_makanan, { bahan: bahan, cara: cara }, null),
+      //   document.getElementById("root")
+      // );
+
+      // const menu1 = React.createElement(
+      //   "ul",
+      //   { className: "ingredients" },
+      //   items.map((ingredient, i) =>
+      //     React.createElement("li", { key: i }, ingredient)
+      //   )
+      // );
+
+      // ReactDOM.render(menu1, document.getElementById("root"));
     </script>
   </body>
 </html>
