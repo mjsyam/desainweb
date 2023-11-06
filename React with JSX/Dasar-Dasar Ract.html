@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+
+    <!-- React library & ReactDOM (Development Version)-->
+    <script src="https://unpkg.com/react@16/umd/react.development.js">
+    </script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+    </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js">
+    </script>
+    <script type="text/babel">
+        <p></p>
+        // // //Javascript
+        // // let heading1 = document.createElement('h1');
+        // // heading1.innerHTML = "Web Design"
+
+        // // let wadahTampung = document.getElementById('root');
+        // // wadahTampung.appendChild(heading1);
+
+
+        // //React
+        // const element1 = React.createElement('h1', { id: 'heading' }, "Web Design");
+        // const element2 = React.createElement('p', { id: 'paragraph' }, "Sesi Praktikum");
+
+
+
+        // const unorderedList = React.createElement('ul', { id: 'paragraph' },
+        //     React.createElement('li', null, "Informatika"
+        //     ),
+        //     React.createElement('li', null, "Sistem Informasi"
+        //     ),
+        //     React.createElement('li', null, "Matematika"
+        //     ));
+
+        // const unorderedList1 = React.createElement('ul', { id: 'paragraph' },
+        //     prodi.map(kontenProdi => React.createElement('li', null, kontenProdi))
+        // );
+
+        // let section = React.createElement('section', { id: 'section' },
+        //     React.createElement('h2', null, "WWF History"),
+        //     React.createElement('p', null, "The World Wide Fund for Nature (WWF) is an international organization working on issues regarding the conservation, research and restoration of the environment, formerly named the World Wildlife Fund. WWF was founded in 1961."),
+        // );
+
+        // //ReactDOM
+        // // ReactDOM.render([element1, element2], document.getElementById("root"));
+        // ReactDOM.render(unorderedList1, document.getElementById("root"));
+
+        let jmti = [
+            "Informatika",
+            "Sistem Informasi",
+            "Matematika",
+            "Aktuaria",
+            "Statistika"
+        ]
+
+        let jstpk = [
+            "Teknik Sipil",
+            "PWK",
+            "Arsitektur"
+        ]
+
+        // function jurusan(props) {
+        //     return React.createElement('ul', { id: 'paragraph' },
+        //         props.items.map(kontenProdi => React.createElement('li', null, kontenProdi))
+        //     )
+        // }
+
+        function Jurusan(props) {
+            const prodi = props.prodi.map(
+                (prodi, i) => <li id={i}>{prodi}</li>
+            )
+
+            return <ul>{prodi}</ul>
+        }
+
+        // ReactDOM.render(
+        //     React.createElement(jurusan, { items: jstpk }, null),
+        //     document.getElementById("root")
+        // );
+        ReactDOM.render(
+            <Jurusan prodi={jmti} />,
+            document.getElementById("root")
+        );
+    </script>
+</body>
+
+</html>

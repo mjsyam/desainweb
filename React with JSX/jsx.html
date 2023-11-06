@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Praktik React</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+    <script src="react/react.js"></script>
+    <script src="react/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+    <script type="text/babel">
+        let jmti = [
+            "Informatika",
+            "Sistem Informasi",
+            "Matematika"
+        ]
+
+        //membuat componen dengan fungsi
+        function Jurusan(props){
+            let prodi = props.prodi.map(
+                prodi => <li>{prodi}</li>
+            )
+            return <ul>{prodi}</ul>
+        }
+
+        ReactDOM.render(
+            <Jurusan prodi={jmti} />,
+            document.getElementById('app'));
+    </script>
+</body>
+
+</html>
