@@ -14,47 +14,97 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
     <script type="text/babel">
+      // const jmti = {
+      //   prodi_1: "Informatik",
+      //   prodi_2: "Sistem Informasi",
+      //   prodi_3: "Matematika",
+      // };
+
+      // const jstpk = {
+      //   prodi_1: "Teknik Sipil",
+      //   prodi_2: "PWK",
+      // };
+
+      // const itk = [jmti, jstpk];
+      // const itk_v2 = [
+      //   {
+      //     prodi_1: "Informatik",
+      //     prodi_2: "Sistem Informasi",
+      //     prodi_3: "Matematika",
+      //   },
+      //   {
+      //     prodi_1: "Teknik Sipil",
+      //     prodi_2: "PWK",
+      //   },
+      // ];
+
+      // console.log(itk[1]);
+
       const data = [
         {
-          name: "Gulai ayam",
-          ingredients: [
-            { name: "Ayam", amount: 0.5, measurement: "ekor" },
-            { name: "Jeruk nipis", amount: 1, measurement: "buah" },
-            { name: "serai geprek", amount: 1, measurement: "batang" },
-            { name: "Daun Salam", amount: 2, measurement: "lembar" },
-            { name: "Daun jeruk", amount: 2, measurement: "lembar" },
-            { name: "Santan Encer", amount: 200, measurement: "ml" },
-            { name: "Santan kental", amount: 200, measurement: "ml" },
-          ],
-          steps: [
-            "Cuci bersih daging ayam dan lumuri dengan jeruk nipis, diamkan kurang lebih 10 menit.",
-            "Tumis bumbu halus sampai wangi, masukkan daun salam, daun jeruk, dan serai, aduk sampai bumbu matang, masukkan ayam, aduk rata, masak sampai berubah warna, tambahkan garam dan kaldu",
-            "Masukkan santan encer dan air, masak dengan api sedang sampai daging ayam empuk",
-            "Setelah kuah menyusut dan daging ayam empuk, masukkan santan kental, masak sambil terus diaduk sampai santan mendidih dan bumbu meresap",
+          title: "Resep Makanan Penutup",
+          menu: [
+            {
+              name: "Gulai ayam",
+              ingredients: [
+                { name: "Ayam", amount: 0.5, measurement: "ekor" },
+                { name: "Jeruk nipis", amount: 1, measurement: "buah" },
+                { name: "serai geprek", amount: 1, measurement: "batang" },
+                { name: "Daun Salam", amount: 2, measurement: "lembar" },
+                { name: "Daun jeruk", amount: 2, measurement: "lembar" },
+                { name: "Santan Encer", amount: 200, measurement: "ml" },
+                { name: "Santan kental", amount: 200, measurement: "ml" },
+              ],
+              steps: [
+                "Cuci bersih daging ayam dan lumuri dengan jeruk nipis, diamkan kurang lebih 10 menit.",
+                "Tumis bumbu halus sampai wangi, masukkan daun salam, daun jeruk, dan serai, aduk sampai bumbu matang, masukkan ayam, aduk rata, masak sampai berubah warna, tambahkan garam dan kaldu",
+                "Masukkan santan encer dan air, masak dengan api sedang sampai daging ayam empuk",
+                "Setelah kuah menyusut dan daging ayam empuk, masukkan santan kental, masak sambil terus diaduk sampai santan mendidih dan bumbu meresap",
+              ],
+            },
+            {
+              name: "Tumis jamur tiram",
+              ingredients: [
+                { name: "Jamur Tiram", amount: 2, measurement: "bungkus" },
+                { name: "Tempe", amount: 0.5, measurement: "papan" },
+                { name: "Bawang Merah", amount: 4, measurement: "siung" },
+                { name: "Bawang Putih", amount: 3, measurement: "siung" },
+                { name: "Cabai Hijau", amount: 5, measurement: "buah" },
+                { name: "saus tiram", amount: 10, measurement: "sendok" },
+                { name: "Kaldu jamur", amount: 3, measurement: "sendok" },
+              ],
+              steps: [
+                "Cuci bersih jamur, siangi, sisihkan.",
+                "Goreng tempe setengah kering. Sisihkan.",
+                "Tumis dua bawang dan cabai sampai harum, masukkan jamur, aduk rata, tambahkan saus tiram, kaldu jamur, gula, dan garam. Aduk rata.",
+                "Masukkan tempe, beri sedikit air, masak sampai bumbu meresap. Angkat dan sajikan.",
+              ],
+            },
           ],
         },
+
         {
-          name: "Tumis jamur tiram",
-          ingredients: [
-            { name: "Jamur Tiram", amount: 2, measurement: "bungkus" },
-            { name: "Tempe", amount: 0.5, measurement: "papan" },
-            { name: "Bawang Merah", amount: 4, measurement: "siung" },
-            { name: "Bawang Putih", amount: 3, measurement: "siung" },
-            { name: "Cabai Hijau", amount: 5, measurement: "buah" },
-            { name: "saus tiram", amount: 10, measurement: "sendok" },
-            { name: "Kaldu jamur", amount: 3, measurement: "sendok" },
-          ],
-          steps: [
-            "Cuci bersih jamur, siangi, sisihkan.",
-            "Goreng tempe setengah kering. Sisihkan.",
-            "Tumis dua bawang dan cabai sampai harum, masukkan jamur, aduk rata, tambahkan saus tiram, kaldu jamur, gula, dan garam. Aduk rata.",
-            "Masukkan tempe, beri sedikit air, masak sampai bumbu meresap. Angkat dan sajikan.",
+          title: "Resep Makanan Pembuka",
+          menu: [
+            {
+              name: "Siomay Ikan",
+              ingredients: [
+                { name: "Ikan", amount: 350, measurement: "geram" },
+                { name: "tepung kanji", amount: 3, measurement: "sdm" }
+                            ],
+              steps: [
+                "Haluskan ikan. Haluskan bawang putih dan merica bubuk. Campur dengan semua bahan hingga jadi adonan. Tambahkan air jika terlalu padat. Tes rasa.",
+                "Bentuk adonan dan bungkus dengan kulit siomai.",
+                "Panaskan kukusan, dan kukus siomay kurang lebih 20 menit atau hingga matang."
+              ],
+            },
+            {},
           ],
         },
       ];
 
       //membuat componen dengan fungsi
-      function Resep({ key, name, ingredients, steps }) {
+      function Resep({ name, ingredients, steps }) {
         return (
           <React.Fragment>
             <h2>{name}</h2>
@@ -77,15 +127,15 @@
       }
 
       function Menu(props) {
+        //console.log(props.data[0].title)
         return (
           <article>
             <header>
-              <h1>{props.title}</h1>
+              <h1>{props.data[0].title}</h1>
             </header>
             <div>
-              {props.data.map((resep, i) => (
+              {props.data[0].menu.map((resep, i) => (
                 <Resep
-                  key={i}
                   name={resep.name}
                   ingredients={resep.ingredients}
                   steps={resep.steps}
